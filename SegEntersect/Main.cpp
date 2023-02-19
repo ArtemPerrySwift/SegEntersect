@@ -12,9 +12,9 @@ int main()
 
 	in.close();
 
-	Vector3D intersectPoint;
+	Vector3D intersectVect;
 
-	int intersectResCode = intersect(segments, intersectPoint);
+	int intersectResCode = intersect(segments, intersectVect);
 
 	std::ofstream out;
 	out.open("TestResult.txt");
@@ -22,7 +22,7 @@ int main()
 	switch (intersectResCode)
 	{
 	case 0:
-		out << "Intersection point: " << intersectPoint << std::endl;
+		out << "Intersection point: " << intersectVect << std::endl;
 		break;
 
 	case MULT_INTERSECT:

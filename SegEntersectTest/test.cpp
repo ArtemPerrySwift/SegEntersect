@@ -23,15 +23,15 @@ TEST(Intersection, GeneralIntersection)
 	segments[0].setStartEnd(vectForSegm0[0], vectForSegm0[1]);
 	segments[1].setStartEnd(vectForSegm1[0], vectForSegm1[1]);
 
-	Vector3D intersectPoint;
+	Vector3D intersectVect;
 
-	int intersectResCode = intersect(segments, intersectPoint);
+	int intersectResCode = intersect(segments, intersectVect);
 
 	EXPECT_EQ(intersectResCode, 0);
 
 	Vector3D trueIntersectPoint(0.25, 1.75, 3.75);
 
-	EXPECT_TRUE(isEqual(intersectPoint, trueIntersectPoint));
+	EXPECT_TRUE(isEqual(intersectVect, trueIntersectPoint));
 	
 	//EXPECT_TRUE(true);
 }
@@ -52,15 +52,15 @@ TEST(Intersection, IntersectionIn2DPlot)
 	segments[0].setStartEnd(vectForSegm0[0], vectForSegm0[1]);
 	segments[1].setStartEnd(vectForSegm1[0], vectForSegm1[1]);
 
-	Vector3D intersectPoint;
+	Vector3D intersectVect;
 
-	int intersectResCode = intersect(segments, intersectPoint);
+	int intersectResCode = intersect(segments, intersectVect);
 
 	EXPECT_EQ(intersectResCode, 0);
 
 	Vector3D trueIntersectPoint(0.25, 1.75, 0);
 
-	EXPECT_TRUE(isEqual(intersectPoint, trueIntersectPoint));
+	EXPECT_TRUE(isEqual(intersectVect, trueIntersectPoint));
 
 	//EXPECT_TRUE(true);
 }
@@ -81,15 +81,15 @@ TEST(Intersection, BoundaryIntersection)
 	segments[0].setStartEnd(vectForSegm0[0], vectForSegm0[1]);
 	segments[1].setStartEnd(vectForSegm1[0], vectForSegm1[1]);
 
-	Vector3D intersectPoint;
+	Vector3D intersectVect;
 
-	int intersectResCode = intersect(segments, intersectPoint);
+	int intersectResCode = intersect(segments, intersectVect);
 
 	EXPECT_EQ(intersectResCode, 0);
 
 	Vector3D trueIntersectPoint(4, 3, 5);
 
-	EXPECT_TRUE(isEqual(intersectPoint, trueIntersectPoint));
+	EXPECT_TRUE(isEqual(intersectVect, trueIntersectPoint));
 
 	//EXPECT_TRUE(true);
 }
@@ -110,9 +110,9 @@ TEST(NoIntersaction, IntersectionOutOfSegments)
 	segments[0].setStartEnd(vectForSegm0[0], vectForSegm0[1]);
 	segments[1].setStartEnd(vectForSegm1[0], vectForSegm1[1]);
 
-	Vector3D intersectPoint;
+	Vector3D intersectVect;
 
-	int intersectResCode = intersect(segments, intersectPoint);
+	int intersectResCode = intersect(segments, intersectVect);
 
 	EXPECT_EQ(intersectResCode, NO_INTERSECT);
 
@@ -134,9 +134,9 @@ TEST(NoIntersaction, ParallelSegments)
 	segments[0].setStartEnd(vectForSegm0[0], vectForSegm0[1]);
 	segments[1].setStartEnd(vectForSegm1[0], vectForSegm1[1]);
 
-	Vector3D intersectPoint;
+	Vector3D intersectVect;
 
-	int intersectResCode = intersect(segments, intersectPoint);
+	int intersectResCode = intersect(segments, intersectVect);
 
 	EXPECT_EQ(intersectResCode, NO_INTERSECT);
 
@@ -158,9 +158,9 @@ TEST(NoIntersaction, SegmentsOnOneLine)
 	segments[0].setStartEnd(vectForSegm0[0], vectForSegm0[1]);
 	segments[1].setStartEnd(vectForSegm1[0], vectForSegm1[1]);
 
-	Vector3D intersectPoint;
+	Vector3D intersectVect;
 
-	int intersectResCode = intersect(segments, intersectPoint);
+	int intersectResCode = intersect(segments, intersectVect);
 
 	EXPECT_EQ(intersectResCode, NO_INTERSECT);
 }
@@ -181,9 +181,9 @@ TEST(MultipleIntersactions, SegmentInAnotheSegment)
 	segments[0].setStartEnd(vectForSegm0[0], vectForSegm0[1]);
 	segments[1].setStartEnd(vectForSegm1[0], vectForSegm1[1]);
 
-	Vector3D intersectPoint;
+	Vector3D intersectVect;
 
-	int intersectResCode = intersect(segments, intersectPoint);
+	int intersectResCode = intersect(segments, intersectVect);
 
 	EXPECT_EQ(intersectResCode, MULT_INTERSECT);
 }
@@ -204,9 +204,9 @@ TEST(MultipleIntersactions, SegmentPartInAnotheSegment)
 	segments[0].setStartEnd(vectForSegm0[0], vectForSegm0[1]);
 	segments[1].setStartEnd(vectForSegm1[0], vectForSegm1[1]);
 
-	Vector3D intersectPoint;
+	Vector3D intersectVect;
 
-	int intersectResCode = intersect(segments, intersectPoint);
+	int intersectResCode = intersect(segments, intersectVect);
 
 	EXPECT_EQ(intersectResCode, MULT_INTERSECT);
 }
